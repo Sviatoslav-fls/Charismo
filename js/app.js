@@ -81,24 +81,14 @@ function sliders_bild_callback(params) { }
 
 let slider_about = new Swiper('.reviews__slider', {
 
-	// effect: 'fade',
-	// autoplay: {
-	// 	delay: 3000,
-	// 	disableOnInteraction: false,
-	// },
+
 	observer: true,
 	observeParents: true,
 	slidesPerView: 3,
 	spaceBetween: 73,
-	// autoHeight: true,
 	speed: 800,
 	slidesPerGroup: 1,
-	// touchRatio: 3,
-	//simulateTouch: false,
 	loop: true,
-	//preloadImages: false,
-	//lazy: true,
-	// Dotts
 	pagination: {
 		el: '.reviews__dotts',
 		clickable: true,
@@ -127,10 +117,6 @@ let slider_about = new Swiper('.reviews__slider', {
 			slidesPerView: 3,
 			spaceBetween: 70,
 		},
-		// 1268: {
-		// 	slidesPerView: 3,
-		// 	spaceBetween: 30,
-		// },
 	},
 
 	on: {
@@ -138,10 +124,6 @@ let slider_about = new Swiper('.reviews__slider', {
 			ibg();
 		},
 	}
-	// And if we need scrollbar
-	//scrollbar: {
-	//	el: '.swiper-scrollbar',
-	//},
 });
 
 new Swiper('.partners__slider', {
@@ -158,22 +140,11 @@ new Swiper('.partners__slider', {
 	// autoHeight: true,
 	speed: 800,
 	slidesPerGroup: 5,
-	// touchRatio: 3,
-	//simulateTouch: false,
 	loop: true,
-	//preloadImages: false,
-	//lazy: true,
-	// Dotts
 	pagination: {
 		el: '.partners__dotts',
 		clickable: true,
 	},
-	// Arrows
-	// navigation: {
-	// 	nextEl: '.reviews__arrow_next',
-	// 	prevEl: '.reviews__arrow_prev',
-	// },
-
 	breakpoints: {
 		320: {
 			slidesPerView: 3,
@@ -192,10 +163,6 @@ new Swiper('.partners__slider', {
 			slidesPerView: 5,
 			// spaceBetween: 30,
 		},
-		// 1268: {
-		// 	slidesPerView: 5,
-		// 	spaceBetween: 30,
-		// },
 	},
 
 	on: {
@@ -203,10 +170,6 @@ new Swiper('.partners__slider', {
 			ibg();
 		},
 	}
-	// And if we need scrollbar
-	//scrollbar: {
-	//	el: '.swiper-scrollbar',
-	//},
 });
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
@@ -336,31 +299,6 @@ function body_lock_add(delay) {
 }
 //=================
 
-// LettersAnimation
-let title = document.querySelectorAll('._letter-animation');
-if (title) {
-	for (let index = 0; index < title.length; index++) {
-		let el = title[index];
-		let txt = el.innerHTML;
-		let txt_words = txt.replace('  ', ' ').split(' ');
-		let new_title = '';
-		for (let index = 0; index < txt_words.length; index++) {
-			let txt_word = txt_words[index];
-			let len = txt_word.length;
-			new_title = new_title + '<p>';
-			for (let index = 0; index < len; index++) {
-				let it = txt_word.substr(index, 1);
-				if (it == ' ') {
-					it = '&nbsp;';
-				}
-				new_title = new_title + '<span>' + it + '</span>';
-			}
-			el.innerHTML = new_title;
-			new_title = new_title + '&nbsp;</p>';
-		}
-	}
-}
-//=================
 //Tabs
 let tabs = document.querySelectorAll("._tabs");
 for (let index = 0; index < tabs.length; index++) {
@@ -420,22 +358,7 @@ if (spollers.length > 0) {
 		}
 	}
 }
-//=================
-//Gallery
-let gallery = document.querySelectorAll('._gallery');
-if (gallery) {
-	gallery_init();
-}
-function gallery_init() {
-	for (let index = 0; index < gallery.length; index++) {
-		const el = gallery[index];
-		lightGallery(el, {
-			counter: false,
-			selector: 'a',
-			download: false
-		});
-	}
-}
+
 //=================
 //SearchInList
 function search_in_list(input) {
@@ -1370,7 +1293,7 @@ if (priceSlider) {
 		priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
 	}
 }
-let scr_body = document.querySelector('body');
+// let scr_body = document.querySelector('body');
 let scr_blocks = document.querySelectorAll('._scr-sector');
 let scr_items = document.querySelectorAll('._scr-item');
 let scr_fix_block = document.querySelectorAll('._side-wrapper');
